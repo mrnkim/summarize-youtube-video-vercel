@@ -12,7 +12,9 @@ const API_BASE_URL = "https://api.twelvelabs.io/v1.2";
 const PORT_NUMBER = process.env.REACT_APP_PORT_NUMBER;
 
 /** Set up middleware for Express */
-app.use(cors());
+app.use(
+  cors({ origin: "https://summarize-youtube-video-vercel-client.vercel.app/" })
+);
 app.use(express.json());
 app.use(bodyParser.json());
 app.use(
