@@ -2,7 +2,6 @@ import { React, useState, useEffect } from "react";
 import { useQueryClient } from "@tanstack/react-query";
 import { Video } from "./Video";
 import { InputForm } from "./InputForm";
-import { VideoUrlUploadForm } from "./VideoUrlUploadForm";
 import { Result } from "./Result";
 import "./SummarizeVideo.css";
 import { useGetVideo } from "./apiHooks";
@@ -72,13 +71,6 @@ export function SummarizeVideo({ index, videoId, refetchVideos }) {
   return (
     <div className="summarizeVideo">
       <h1 className="summarizeVideo__appTitle">Summarize a Youtube Video</h1>
-      <VideoUrlUploadForm
-        setTaskVideo={setTaskVideo}
-        taskVideo={taskVideo}
-        index={index}
-        refetchVideos={refetchVideos}
-        resetPrompts={resetPrompts}
-      />
       {!video && (
         <div className="summarizeVideo__uploadMessageWrapper">
           <img
